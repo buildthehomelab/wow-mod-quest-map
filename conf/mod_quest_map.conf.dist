@@ -1,0 +1,46 @@
+[worldserver]
+
+########################################
+# mod-quest-map
+#
+# Puts the quest givers a player can pick quests up from on their world map, the way retail
+# does. The client only sees creatures within visibility range, so a map addon (DragonUI's
+# world map) asks this module for the givers on the zone it shows.
+########################################
+
+#
+#    QuestMap.Enable
+#        Description: Master switch. With 0 the map shows no quest givers.
+#        Default:     1
+#
+
+QuestMap.Enable = 1
+
+#
+#    QuestMap.SaveZoneData
+#        Description: Save the zone of each quest giver spawn the module works out from the map
+#                     files (creature.zoneId / gameobject.zoneId), so later starts skip that.
+#                     Only spawns without a zone are written.
+#        Default:     1
+#
+
+QuestMap.SaveZoneData = 1
+
+#
+#    QuestMap.MaxPinsPerGiver
+#        Description: Pins one quest giver gets on one zone map at most, when it has several
+#                     spawns there (spawns at the same spot always share one pin).
+#        Default:     3
+#
+
+QuestMap.MaxPinsPerGiver = 3
+
+#
+#    QuestMap.HideLockedContinents
+#        Description: With mod-individual-progression (IndividualProgression.Enable = 1), leave
+#                     out quest givers on a continent the player's progression hasn't opened yet
+#                     (Outland before TBC, Northrend before WotLK).
+#        Default:     1
+#
+
+QuestMap.HideLockedContinents = 1
