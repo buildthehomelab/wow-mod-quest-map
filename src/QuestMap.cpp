@@ -454,7 +454,7 @@ namespace QuestMap
                             continue;
 
                         uint32 same = 0;
-                        bool near = false;
+                        bool isNear = false;
                         for (Giver const& other : area.givers)
                         {
                             if (other.entry != entry || other.object != object)
@@ -463,9 +463,9 @@ namespace QuestMap
                             if (std::fabs(other.x / 10000.0f - x) < SAME_PLACE && std::fabs(other.y / 10000.0f - y) < SAME_PLACE
                                 && other.phaseMask == data.phaseMask
                                 && other.events == (event != events.end() ? event->second : std::vector<int16>()))
-                                near = true;
+                                isNear = true;
                         }
-                        if (near || same >= sConfig.maxPinsPerGiver)
+                        if (isNear || same >= sConfig.maxPinsPerGiver)
                             continue;
 
                         Giver giver;
